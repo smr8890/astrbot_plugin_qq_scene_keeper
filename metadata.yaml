@@ -1,5 +1,5 @@
 name: astrbot_plugin_qq_scene_keeper
-display_name: QQ 场景维护
+display_name: QQ 主动消息场景维护
 desc: 在 AstrBot 重启或平台重载后恢复 QQ 官方适配器的会话场景，保证主动消息正常发送。
 short_desc: 快照并回放 QQ 官方适配器的会话场景。
 version: v0.1.0

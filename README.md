@@ -1,14 +1,12 @@
-# astrbot_plugin_qq_scene_keeper
+# QQ 主动消息场景维护
+
+`astrbot_plugin_qq_scene_keeper`
 
 在 AstrBot 重启或平台适配器重载后，恢复 QQ 官方适配器内存中的会话场景（scene），让依赖 `send_by_session` 的主动消息继续按正确的 QQ 接口发送。
 
 ## 背景
 
-QQ 官方适配器使用 `_session_scene` 区分同一会话是 QQ 群、频道子频道还是好友单聊。该字典只存在于适配器实例内存中：
-
-- 消息事件到达时写入；
-- 进程重启、平台重载、平台禁用再启用后清空；
-- 没有 TTL，也没有持久化。
+QQ 官方适配器使用 `_session_scene` 区分同一会话是 QQ 群、频道子频道还是好友单聊。该字典只存在于适配器实例内存中，重启后清空。
 
 scene 为空时，QQ 群主动推送会在调用 QQ 接口前被跳过，导致主动消息发送失败。本插件通过“快照 + 回放”维护 scene。
 
