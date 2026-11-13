@@ -1,0 +1,21 @@
+{
+  "snapshot_interval_secs": {
+    "description": "快照间隔（秒）",
+    "hint": "定期读取 QQ 官方适配器的会话场景并写入存储。最小 1 秒。",
+    "type": "int",
+    "default": 60
+  },
+  "infer_from_cron": {
+    "description": "从定时任务推断场景",
+    "hint": "启动或平台重载时，根据定时任务的目标会话补齐缺失的场景。",
+    "type": "bool",
+    "default": true
+  },
+  "scene_overrides": {
+    "description": "手动会话场景映射",
+    "hint": "格式为 平台ID:会话ID:scene，scene 取 group、channel 或 friend。优先级高于快照。",
+    "type": "list",
+    "item_type": "string",
+    "default": []
+  }
+}
